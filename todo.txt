@@ -1,0 +1,15 @@
+in page of lecture we should replace 
+      {/* Contact Section */}
+      <ContactSection />
+it should look the same but with two different images 
+/images/lecture_in_front.jpeg
+and 
+/images/lecture_in_the_hall.jpeg
+
+and instad of text
+מיקום הקליניקה
+should be written 
+ההרצאה 
+
+and 
+inside 
