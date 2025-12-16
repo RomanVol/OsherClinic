@@ -64,41 +64,54 @@ export default function MassagePage() {
               </ul>
             </section>
 
-            <section>
-              <h2 className="text-xl md:text-2xl font-bold text-primary-700 mb-3 md:mb-4">השמנים האתריים</h2>
-              <p>
-                אני עובדת עם מגוון שמנים אתריים איכותיים ביותר, כל אחד עם תכונות ייחודיות משלו.
-                השמנים נבחרים במיוחד עבורך בהתאם למצבך ולצרכים שלך - מלבנדר להרגעה, בלאנס לאיזון רגשי,
-                תפוז להעלאת אנרגיה ולבונה להפגת חרדות ומתחים ועוד רבים נוספים.
-              </p>
-              <div className="mt-4 bg-gradient-to-r from-primary-50 to-pink-50 p-4 md:p-6 rounded-xl">
-                <h3 className="text-lg md:text-xl font-semibold text-primary-800 mb-3">שמנים אתריים של חברת דוטרה</h3>
-                <p className="mb-3">
-                  בקליניקה אני משתמשת בשמנים אתריים איכותיים של חברת דוטרה (doTERRA), המובילה העולמית בתחום השמנים האתריים הטהורים והטבעיים.
-                </p>
-                <p className="mb-4">
-                  ניתן לרכוש את השמנים האתריים דרך הקליניקה של אושר - אשמח לייעץ לך ולהתאים את השמנים המתאימים ביותר עבורך.
-                </p>
-                <a
-                  href="https://www.doterra.com/IL/he_IL"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold text-base md:text-lg underline hover:no-underline transition-all"
-                >
-                  <Image
-                    src="/images/doTerraOil.jpeg"
-                    alt="doTerra Essential Oils"
-                    width={250}
-                    height={250}
-                    className="ml-3 rounded-lg"
-                  />
-                  למידע נוסף על שמנים אתריים של דוטרה
-                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </a>
-              </div>
-            </section>
+<section>
+  <h2 className="text-xl md:text-2xl font-bold text-primary-700 mb-3 md:mb-4">השמנים האתריים</h2>
+  <p>
+    אני עובדת עם מגוון שמנים אתריים איכותיים ביותר, כל אחד עם תכונות ייחודיות משלו.
+    השמנים נבחרים במיוחד עבורך בהתאם למצבך ולצרכים שלך - מלבנדר להרגעה, בלאנס לאיזון רגשי,
+    תפוז להעלאת אנרגיה ולבונה להפגת חרדות ומתחים ועוד רבים נוספים.
+  </p>
+  <div className="mt-4 bg-gradient-to-r from-primary-50 to-pink-50 p-4 md:p-6 rounded-xl">
+    <h3 className="text-lg md:text-xl font-semibold text-primary-800 mb-3">שמנים אתריים של חברת דוטרה</h3>
+    <p className="mb-3">
+      בקליניקה אני משתמשת בשמנים אתריים איכותיים של חברת דוטרה (doTERRA), המובילה העולמית בתחום השמנים האתריים הטהורים והטבעיים.
+    </p>
+    <p className="mb-4">
+      ניתן לרכוש את השמנים האתריים דרך הקליניקה של אושר - אשמח לייעץ לך ולהתאים את השמנים המתאימים ביותר עבורך.
+    </p>
+
+    {/* Updated Layout: Flex Column */}
+    <div className="flex flex-col items-start gap-4">
+      {/* 1. Text Link is now above */}
+      <a
+        href="https://www.doterra.com/IL/he_IL"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold text-base md:text-lg underline hover:no-underline transition-all"
+      >
+        למידע נוסף על שמנים אתריים של דוטרה
+        <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+        </svg>
+      </a>
+
+      {/* 2. Image is now below (also clickable) */}
+      <a 
+        href="https://www.doterra.com/IL/he_IL"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Image
+          src="/images/doTerraOil.jpeg"
+          alt="doTerra Essential Oils"
+          width={250}
+          height={250}
+          className="rounded-lg hover:opacity-90 transition-opacity"
+        />
+      </a>
+    </div>
+  </div>
+</section>
 
             <section>
               <h2 className="text-xl md:text-2xl font-bold text-primary-700 mb-3 md:mb-4">למי מתאים הטיפול?</h2>
