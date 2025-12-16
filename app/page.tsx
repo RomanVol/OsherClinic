@@ -124,17 +124,28 @@ export default function Home() {
         </section>
 
         {/* Call to Action - Before Testimonials */}
-        <section className="mt-8 md:mt-12 mb-12 md:mb-16 text-center">
+        {/* <section className="mt-8 md:mt-12 mb-12 md:mb-16 text-center">
           <button 
             onClick={scrollToContact}
             className="bg-gradient-to-r from-primary-500 to-pink-500 hover:from-primary-600 hover:to-pink-600 text-white font-bold text-lg md:text-xl px-8 md:px-12 py-3 md:py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
           >
             צרי קשר לקביעת פגישה
           </button>
+        </section> */}
+
+          <section className="mt-8 md:mt-12 mb-12 md:mb-16 text-center">
+          <div className="pt-6 md:pt-8 text-center border-t border-gray-200">
+            <p className="text-lg md:text-xl font-semibold text-purple-700 mb-4 md:mb-6">
+              מוכנה להתחיל את המסע של שינוי פנימי?
+            </p>
+            <a href="#clinic-contact" className="inline-block bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white font-bold text-base md:text-lg px-8 md:px-12 py-3 md:py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+              צרי קשר לייעוץ ראשוני
+            </a>
+          </div>
         </section>
 
         {/* Testimonials Section */}
-        <Testimonials testimonials={homeTestimonials} />
+        {/* <Testimonials testimonials={homeTestimonials} /> */}
       </main>
 
       {/* Contact Form */}

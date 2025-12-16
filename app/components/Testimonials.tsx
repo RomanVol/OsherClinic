@@ -78,7 +78,7 @@ export default function Testimonials({
                   <img
                     src={testimonial.image}
                     alt={`המלצה מ${testimonial.name}`}
-                    className="w-full h-auto -mt-[90px]"
+                    className="w-full h-auto -mt-[80px]"
                     loading="lazy"
                     onError={(e) => {
                       console.log('Failed to load image:', testimonial.image);

@@ -121,17 +121,29 @@ export default function ConsciousnessPage() {
             </section>
 
             {/* Certification Image */}
-            <section>
+            {/* <section>
               <h2 className="text-xl md:text-2xl font-bold text-purple-700 mb-3 md:mb-4">הסמכה מקצועית</h2>
               <div className="flex justify-center">
                 <img 
                   src="/images/certification.jpeg" 
                   alt="תעודת הסמכה בשיטת שלושת המימדים"
-                  className="rounded-xl shadow-lg max-w-full h-auto"
+                  className="rounded-xl shadow-lg max-w-full h-auto -mb-[120px] mt-[20px]"
                 />
               </div>
-            </section>
+            </section> */}
 
+            <section>
+            <h2 className="text-xl md:text-2xl font-bold text-purple-700 mb-3 md:mb-4">הסמכה מקצועית</h2>
+            <div className="flex justify-center">
+              <div className="w-full max-w-2xl h-[400px] md:h-[600px] overflow-hidden rounded-xl shadow-lg">
+                <img 
+                  src="/images/certification.jpeg" 
+                  alt="תעודת הסמכה בשיטת שלושת המימדים"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+            </div>
+          </section>
             {/* Call to Action */}
             <div className="pt-6 md:pt-8 text-center border-t border-gray-200">
               <p className="text-lg md:text-xl font-semibold text-purple-700 mb-4 md:mb-6">
@@ -145,7 +157,7 @@ export default function ConsciousnessPage() {
         </article>
 
         {/* Testimonials Section */}
-        <Testimonials testimonials={homeTestimonials} />
+        {/* <Testimonials testimonials={consciousnessTestimonials} /> */}
       </main>
 
       {/* Contact Form */}
