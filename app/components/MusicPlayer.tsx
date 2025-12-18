@@ -5,9 +5,13 @@ import { useState, useRef, useEffect } from 'react';
 export default function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [showPrompt, setShowPrompt] = useState(true);
+  const [userDeclined, setUserDeclined] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   const togglePlay = () => {
+    if (userDeclined) {
+      return;
+    }
     if (audioRef.current) {
       if (isPlaying) {
         audioRef.current.pause();
@@ -24,6 +28,10 @@ export default function MusicPlayer() {
   // Try to auto-play after first user interaction
   useEffect(() => {
     const handleFirstInteraction = () => {
+      if (userDeclined) {
+        document.removeEventListener('click', handleFirstInteraction);
+        return;
+      }
       if (audioRef.current && !isPlaying) {
         audioRef.current.play().then(() => {
           setIsPlaying(true);
@@ -39,7 +47,7 @@ export default function MusicPlayer() {
 
     document.addEventListener('click', handleFirstInteraction);
     return () => document.removeEventListener('click', handleFirstInteraction);
-  }, []);
+  }, [isPlaying, userDeclined]);
 
   return (
     <>
@@ -77,7 +85,14 @@ export default function MusicPlayer() {
                 כן, הפעילי מוזיקה 🎵
               </button>
               <button
-                onClick={() => setShowPrompt(false)}
+                onClick={() => {
+                  setUserDeclined(true);
+                  setShowPrompt(false);
+                  if (audioRef.current) {
+                    audioRef.current.pause();
+                  }
+                  setIsPlaying(false);
+                }}
                 className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold px-8 py-3 rounded-full transition-all duration-300"
               >
                 לא תודה
