@@ -4,8 +4,12 @@ import ContactForm from '../components/ContactForm';
 import LectureContactSection from '../components/LectureContactSection';
 
 export const metadata: Metadata = {
-  title: 'מצניחה לצמיחה - חיים כנגד כל הסיכויים | הקליניקה של אושר',
-  description: 'הרצאה מעוררת השראה על התגברות על אתגרים והפיכת משברים להזדמנויות לצמיחה',
+  title: 'הרצאה: מצניחה לצמיחה - חיים כנגד כל הסיכויים | הקליניקה של אושר',
+  description:
+    'הרצאה מעוררת השראה לנשים על התגברות על אתגרים והפיכת משברים להזדמנויות לצמיחה. להזמנות ותיאום שיחה: 050-766-0560.',
+  alternates: {
+    canonical: 'https://osherclinic.co.il/lecture',
+  },
 };
 
 export default function LecturePage() {
@@ -115,6 +119,57 @@ export default function LecturePage() {
               </div>
             </section>
 
+            <section>
+              <h2 className="text-xl md:text-2xl font-bold text-pink-700 mb-3 md:mb-4">איך מזמינים את ההרצאה?</h2>
+              <ol className="list-decimal list-inside space-y-2 mr-4">
+                <li>מתאמות שיחת טלפון קצרה כדי להבין קהל יעד, מטרות וסגנון האירוע.</li>
+                <li>בוחרות פורמט (הרצאה/סדנה) ותאריך מתאים.</li>
+                <li>מגדירות פרטים לוגיסטיים: משך, ציוד נדרש, מספר משתתפות.</li>
+                <li>ביום האירוע - הרצאה מעשית ומרגשת עם מקום לשאלות.</li>
+              </ol>
+            </section>
+
+            <section>
+              <h2 className="text-xl md:text-2xl font-bold text-pink-700 mb-3 md:mb-4">אזורי פעילות</h2>
+              <p>
+                ההרצאה זמינה להזמנה בכל הארץ. ניתן לתאם בקלות גם באזור השרון הצפוני (כולל חריש, חדרה ופרדס חנה והסביבה).
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl md:text-2xl font-bold text-pink-700 mb-3 md:mb-4">שאלות נפוצות</h2>
+              <div className="space-y-4">
+                <div className="bg-pink-50 p-4 md:p-5 rounded-xl">
+                  <h3 className="text-lg md:text-xl font-semibold text-pink-800 mb-2">כמה זמן נמשכת ההרצאה?</h3>
+                  <p>המשך נקבע לפי הפורמט והאירוע. בשיחה נבחר משך שמתאים לקהל ולמטרה.</p>
+                </div>
+                <div className="bg-pink-50 p-4 md:p-5 rounded-xl">
+                  <h3 className="text-lg md:text-xl font-semibold text-pink-800 mb-2">אפשר להתאים את התוכן לקהל ספציפי?</h3>
+                  <p>כן. אפשר להתאים דגשים לפי גיל, ארגון/קהילה, ואופי האירוע.</p>
+                </div>
+                <div className="bg-pink-50 p-4 md:p-5 rounded-xl">
+                  <h3 className="text-lg md:text-xl font-semibold text-pink-800 mb-2">מה צריך להכין מראש?</h3>
+                  <p>בדרך כלל מספיק חלל מתאים ומסך/מקרן לפי הצורך. נסגור את כל הפרטים מראש.</p>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-xl md:text-2xl font-bold text-pink-700 mb-3 md:mb-4">אולי יעניין אותך גם</h2>
+              <ul className="list-disc list-inside space-y-2 mr-4">
+                <li>
+                  <Link href="/massage" className="text-pink-700 hover:text-pink-800 underline hover:no-underline">
+                    טיפול מגע עם שמנים אתריים
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/consciousness" className="text-pink-700 hover:text-pink-800 underline hover:no-underline">
+                    טיפול תודעה בשיטת שלושת המימדים
+                  </Link>
+                </li>
+              </ul>
+            </section>
+
             <section className="bg-pink-50 p-4 md:p-6 rounded-xl">
               <p className="text-base md:text-lg italic text-pink-900">
                 "סיפורי החיים שלנו לא נכתבים מראש. יש לנו את הכוח לשנות את הכיוון,
@@ -127,11 +182,20 @@ export default function LecturePage() {
             {/* Call to Action */}
             <div className="pt-6 md:pt-8 text-center border-t border-gray-200">
               <p className="text-lg md:text-xl font-semibold text-pink-700 mb-4 md:mb-6">
-                מעוניינת להזמין את ההרצאה או לשמוע עוד פרטים?
+                מעוניינת להזמין את ההרצאה? התקשרי עכשיו
               </p>
-              <a href="#lecture-contact" className="inline-block bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white font-bold text-base md:text-lg px-8 md:px-12 py-3 md:py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                צרי קשר לפרטים והזמנות
+              <a
+                href="tel:0507660560"
+                className="inline-block bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white font-bold text-base md:text-lg px-8 md:px-12 py-3 md:py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                dir="ltr"
+              >
+                050-766-0560
               </a>
+              <div className="mt-4">
+                <a href="#lecture-contact" className="text-pink-700 hover:text-pink-800 font-semibold underline hover:no-underline transition-all">
+                  או השאירי פרטים ואחזור אלייך
+                </a>
+              </div>
             </div>
           </div>
         </article>
@@ -145,21 +209,21 @@ export default function LecturePage() {
             <div className="rounded-2xl overflow-hidden shadow-lg">
               <img
                 src="/images/testemoniel_lecture1.jpeg"
-                alt="המלצה מהרצאה"
+                alt="המלצה מהרצאה מצניחה לצמיחה - 1"
                 className="w-full h-auto object-cover"
               />
             </div>
             <div className="rounded-2xl overflow-hidden shadow-lg">
               <img
                 src="/images/testemoniel_lecture2.jpeg"
-                alt="המלצה מהרצאה"
+                alt="המלצה מהרצאה מצניחה לצמיחה - 2"
                 className="w-full h-auto object-cover"
               />
             </div>
             <div className="rounded-2xl overflow-hidden shadow-lg">
               <img
                 src="/images/testemoniel_lecture3.jpeg"
-                alt="המלצה מהרצאה"
+                alt="המלצה מהרצאה מצניחה לצמיחה - 3"
                 className="w-full h-auto object-cover"
               />
             </div>

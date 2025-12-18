@@ -7,8 +7,12 @@ import { consciousnessTestimonials } from '../data/testimonials';
 import { homeTestimonials } from '../data/testimonials';
 
 export const metadata: Metadata = {
-  title: 'טיפול תודעה בשיטת שלושת המימדים | הקליניקה של אושר',
-  description: 'שיטה ייחודית לפיתוח תודעה ושינוי פנימי עמוק המאפשרת צמיחה אישית ורוחנית',
+  title: 'טיפול תודעה בשיטת שלושת המימדים לנשים | הקליניקה של אושר',
+  description:
+    'טיפול תודעה בשיטת שלושת המימדים לנשים בלבד: תהליך עומק לשינוי דפוסים, בהירות וצמיחה אישית. לתיאום שיחה: 050-766-0560 (אזור השרון הצפוני).',
+  alternates: {
+    canonical: 'https://osherclinic.co.il/consciousness',
+  },
 };
 
 export default function ConsciousnessPage() {
@@ -101,6 +105,17 @@ export default function ConsciousnessPage() {
             </section>
 
             <section>
+              <h2 className="text-xl md:text-2xl font-bold text-purple-700 mb-3 md:mb-4">איך נראה מפגש בפועל?</h2>
+              <ol className="list-decimal list-inside space-y-2 mr-4">
+                <li>שיחת היכרות קצרה והגדרת מטרה ברורה למפגש.</li>
+                <li>מיפוי דפוסים/אמונות שמנהלים אותך ביומיום.</li>
+                <li>עבודה תודעתית בשילוב שלושת המימדים (פיזי/רגשי/רוחני) לפי הצורך.</li>
+                <li>חיזוק תובנות וכלים פרקטיים להמשך השבוע.</li>
+                <li>סיכום והמלצה לצעדים הבאים בתהליך (אם מתאים).</li>
+              </ol>
+            </section>
+
+            <section>
               <h2 className="text-xl md:text-2xl font-bold text-purple-700 mb-3 md:mb-4">למי מתאים הטיפול?</h2>
               <ul className="list-disc list-inside space-y-2 mr-4">
                 <li>נשים המחפשות שינוי אמיתי בחיים</li>
@@ -118,6 +133,47 @@ export default function ConsciousnessPage() {
                 שחרור מדפוסים מגבילים, והתחברות אמיתית לכוח הפנימי והחוכמה שבתוכך.
                 הטיפול מאפשר צמיחה אישית ורוחנית משמעותית ובעלת השפעה ארוכת טווח.
               </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl md:text-2xl font-bold text-purple-700 mb-3 md:mb-4">אזורי שירות</h2>
+              <p>
+                הקליניקה בחריש ומלווה נשים מאזור השרון הצפוני, כולל חריש, חדרה, פרדס חנה והסביבה (בתיאום מראש).
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl md:text-2xl font-bold text-purple-700 mb-3 md:mb-4">שאלות נפוצות</h2>
+              <div className="space-y-4">
+                <div className="bg-purple-50 p-4 md:p-5 rounded-xl">
+                  <h3 className="text-lg md:text-xl font-semibold text-purple-800 mb-2">האם צריך ניסיון קודם בטיפול תודעתי?</h3>
+                  <p>לא. מתחילים מהנקודה שבה את נמצאת ומתקדמים בקצב שמתאים לך.</p>
+                </div>
+                <div className="bg-purple-50 p-4 md:p-5 rounded-xl">
+                  <h3 className="text-lg md:text-xl font-semibold text-purple-800 mb-2">אחרי כמה מפגשים מרגישים שינוי?</h3>
+                  <p>יש נשים שמרגישות הקלה כבר אחרי מפגש אחד, ולרוב תהליך עמוק נבנה לאורך כמה מפגשים.</p>
+                </div>
+                <div className="bg-purple-50 p-4 md:p-5 rounded-xl">
+                  <h3 className="text-lg md:text-xl font-semibold text-purple-800 mb-2">מה ההבדל בין שיחה רגילה לבין טיפול בשיטה?</h3>
+                  <p>המטרה היא לא רק להבין, אלא גם לשנות דפוסים בפועל בעבודה תודעתית ממוקדת ומובנית.</p>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-xl md:text-2xl font-bold text-purple-700 mb-3 md:mb-4">אולי יעניין אותך גם</h2>
+              <ul className="list-disc list-inside space-y-2 mr-4">
+                <li>
+                  <Link href="/massage" className="text-purple-700 hover:text-purple-800 underline hover:no-underline">
+                    טיפול מגע עם שמנים אתריים
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/lecture" className="text-purple-700 hover:text-purple-800 underline hover:no-underline">
+                    הרצאה: מצניחה לצמיחה - חיים כנגד כל הסיכויים
+                  </Link>
+                </li>
+              </ul>
             </section>
 
             {/* Certification Image */}
@@ -147,11 +203,20 @@ export default function ConsciousnessPage() {
             {/* Call to Action */}
             <div className="pt-6 md:pt-8 text-center border-t border-gray-200">
               <p className="text-lg md:text-xl font-semibold text-purple-700 mb-4 md:mb-6">
-                מוכנה להתחיל את המסע של שינוי פנימי?
+                מוכנה לתאם שיחה ולהתחיל תהליך?
               </p>
-              <a href="#clinic-contact" className="inline-block bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white font-bold text-base md:text-lg px-8 md:px-12 py-3 md:py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                צרי קשר לייעוץ ראשוני
+              <a
+                href="tel:0507660560"
+                className="inline-block bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white font-bold text-base md:text-lg px-8 md:px-12 py-3 md:py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                dir="ltr"
+              >
+                050-766-0560
               </a>
+              <div className="mt-4">
+                <a href="#clinic-contact" className="text-purple-700 hover:text-purple-800 font-semibold underline hover:no-underline transition-all">
+                  או לצפייה במיקום הקליניקה
+                </a>
+              </div>
             </div>
           </div>
         </article>

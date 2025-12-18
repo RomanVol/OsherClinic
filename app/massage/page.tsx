@@ -8,8 +8,12 @@ import { massageTestimonials } from '../data/testimonials';
 import { homeTestimonials } from '../data/testimonials';
 
 export const metadata: Metadata = {
-  title: 'טיפול מגע עם שמנים אתריים | הקליניקה של אושר',
-  description: 'טיפול מגע מקצועי עם שמנים אתריים איכותיים לאיזון גוף ונפש',
+  title: 'טיפול מגע עם שמנים אתריים לנשים | הקליניקה של אושר',
+  description:
+    'טיפול מגע מקצועי עם שמנים אתריים לנשים בלבד: הרפיה, איזון גוף-נפש והפגת מתחים. לתיאום שיחה בקלות: 050-766-0560 (אזור השרון הצפוני).',
+  alternates: {
+    canonical: 'https://osherclinic.co.il/massage',
+  },
 };
 
 export default function MassagePage() {
@@ -64,6 +68,17 @@ export default function MassagePage() {
               </ul>
             </section>
 
+            <section>
+              <h2 className="text-xl md:text-2xl font-bold text-primary-700 mb-3 md:mb-4">איך נראה הטיפול בפועל?</h2>
+              <ol className="list-decimal list-inside space-y-2 mr-4">
+                <li>שיחה קצרה והבנת הצורך שלך (מתח, עייפות, כאבים, עומס רגשי).</li>
+                <li>בחירת שמנים אתריים מותאמת אישית למצבך ולמטרה של המפגש.</li>
+                <li>טיפול מגע רגוע ומקצועי בסביבה שקטה ובטוחה.</li>
+                <li>הקשבה לגוף והתאמת לחץ וקצב תוך כדי הטיפול.</li>
+                <li>סיום הדרגתי, שתייה והמלצות להמשך (במידת הצורך).</li>
+              </ol>
+            </section>
+
 <section>
   <h2 className="text-xl md:text-2xl font-bold text-primary-700 mb-3 md:mb-4">השמנים האתריים</h2>
   <p>
@@ -103,7 +118,7 @@ export default function MassagePage() {
       >
         <Image
           src="/images/doTerraOil.jpeg"
-          alt="doTerra Essential Oils"
+          alt="שמנים אתריים doTERRA בקליניקה של אושר"
           width={250}
           height={250}
           className="rounded-lg hover:opacity-90 transition-opacity"
@@ -128,14 +143,64 @@ export default function MassagePage() {
               </p>
             </section>
 
+            <section>
+              <h2 className="text-xl md:text-2xl font-bold text-primary-700 mb-3 md:mb-4">אזורי שירות</h2>
+              <p>
+                הקליניקה בחריש ומעניקה טיפול לנשים מאזור השרון הצפוני, כולל חריש, חדרה, פרדס חנה והסביבה (בתיאום מראש).
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl md:text-2xl font-bold text-primary-700 mb-3 md:mb-4">שאלות נפוצות</h2>
+              <div className="space-y-4">
+                <div className="bg-primary-50 p-4 md:p-5 rounded-xl">
+                  <h3 className="text-lg md:text-xl font-semibold text-primary-800 mb-2">האם הטיפול מתאים גם למי שמעולם לא עשתה טיפול מגע?</h3>
+                  <p>כן. מתחילים בעדינות, מסבירים כל שלב, ומתאימים את הטיפול לקצב ולנוחות שלך.</p>
+                </div>
+                <div className="bg-primary-50 p-4 md:p-5 rounded-xl">
+                  <h3 className="text-lg md:text-xl font-semibold text-primary-800 mb-2">איך בוחרים את השמנים האתריים?</h3>
+                  <p>הבחירה נעשית יחד איתך לפי תחושה, מטרה טיפולית ומצב רגשי/פיזי באותו יום.</p>
+                </div>
+                <div className="bg-primary-50 p-4 md:p-5 rounded-xl">
+                  <h3 className="text-lg md:text-xl font-semibold text-primary-800 mb-2">כמה זמן נמשך טיפול ומה כדאי להביא?</h3>
+                  <p>בדרך כלל שעה עד שעה וחצי. מומלץ להגיע בבגדים נוחים ולתת לעצמך זמן להירגע אחרי.</p>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-xl md:text-2xl font-bold text-primary-700 mb-3 md:mb-4">אולי יעניין אותך גם</h2>
+              <ul className="list-disc list-inside space-y-2 mr-4">
+                <li>
+                  <Link href="/consciousness" className="text-primary-700 hover:text-primary-800 underline hover:no-underline">
+                    טיפול תודעה בשיטת שלושת המימדים
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/lecture" className="text-primary-700 hover:text-primary-800 underline hover:no-underline">
+                    הרצאה: מצניחה לצמיחה - חיים כנגד כל הסיכויים
+                  </Link>
+                </li>
+              </ul>
+            </section>
+
             {/* Call to Action */}
             <div className="pt-6 md:pt-8 text-center border-t border-gray-200">
               <p className="text-lg md:text-xl font-semibold text-primary-700 mb-4 md:mb-6">
-                מוכנה לחוות טיפול מרגיע ומחדש?
+                מוכנה לתאם שיחה ולקבוע טיפול?
               </p>
-              <a href="#clinic-contact" className="inline-block bg-gradient-to-r from-primary-500 to-pink-500 hover:from-primary-600 hover:to-pink-600 text-white font-bold text-base md:text-lg px-8 md:px-12 py-3 md:py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                צרי קשר לקביעת תור
+              <a
+                href="tel:0507660560"
+                className="inline-block bg-gradient-to-r from-primary-500 to-pink-500 hover:from-primary-600 hover:to-pink-600 text-white font-bold text-base md:text-lg px-8 md:px-12 py-3 md:py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                dir="ltr"
+              >
+                050-766-0560
               </a>
+              <div className="mt-4">
+                <a href="#clinic-contact" className="text-primary-700 hover:text-primary-800 font-semibold underline hover:no-underline transition-all">
+                  או לצפייה במיקום הקליניקה
+                </a>
+              </div>
             </div>
           </div>
         </article>
