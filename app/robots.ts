@@ -1,14 +1,12 @@
 import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
+  const isProduction = process.env.VERCEL_ENV === "production";
+
   return {
-    rules: [
-      {
-        userAgent: "*",
-        allow: "/",
-      },
-    ],
+    rules: isProduction
+      ? [{ userAgent: "*", allow: "/" }]
+      : [{ userAgent: "*", disallow: "/" }],
     sitemap: "https://osherclinic.co.il/sitemap.xml",
   };
 }
-
