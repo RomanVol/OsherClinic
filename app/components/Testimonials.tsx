@@ -10,13 +10,13 @@ interface Testimonial {
 interface TestimonialsProps {
   testimonials?: Testimonial[];
   title?: string;
-  colorScheme?: 'primary' | 'purple' | 'pink';
+  colorScheme?: 'sage' | 'terracotta' | 'sand';
 }
 
-export default function Testimonials({ 
-  testimonials = [], 
+export default function Testimonials({
+  testimonials = [],
   title = "מה אומרות המטופלות שלנו",
-  colorScheme = 'primary'
+  colorScheme = 'sage'
 }: TestimonialsProps) {
   // Default placeholder testimonials if none provided
   const defaultTestimonials: Testimonial[] = [
@@ -40,41 +40,51 @@ export default function Testimonials({
   const displayTestimonials = testimonials.length > 0 ? testimonials : defaultTestimonials;
 
   const colorClasses = {
-    primary: {
-      title: 'text-primary-700',
-      gradient: 'from-primary-50 to-pink-50',
-      accent: 'text-primary-600'
+    sage: {
+      title: 'text-forest-800',
+      gradient: 'from-sage-50 to-cream-50',
+      accent: 'text-sage-600',
+      border: 'border-sage-100',
+      icon: 'bg-sage-100 text-sage-500'
     },
-    purple: {
-      title: 'text-purple-700',
-      gradient: 'from-purple-50 to-purple-100',
-      accent: 'text-purple-600'
+    terracotta: {
+      title: 'text-forest-800',
+      gradient: 'from-terracotta-50 to-sand-50',
+      accent: 'text-terracotta-600',
+      border: 'border-terracotta-100',
+      icon: 'bg-terracotta-100 text-terracotta-500'
     },
-    pink: {
-      title: 'text-pink-700',
-      gradient: 'from-pink-50 to-pink-100',
-      accent: 'text-pink-600'
+    sand: {
+      title: 'text-forest-800',
+      gradient: 'from-sand-50 to-cream-50',
+      accent: 'text-sand-700',
+      border: 'border-sand-200',
+      icon: 'bg-sand-100 text-sand-600'
     }
   };
 
   const colors = colorClasses[colorScheme];
 
   return (
-    <section className="py-8 md:py-12">
+    <section className="py-12 md:py-16">
       <div className="container mx-auto px-4 max-w-6xl">
-        <h2 className={`text-2xl md:text-3xl lg:text-4xl font-bold ${colors.title} mb-8 md:mb-12 text-center`}>
-          {title}
-        </h2>
-        
+        {/* Header */}
+        <div className="text-center mb-10 md:mb-14">
+          <h2 className={`text-2xl md:text-3xl lg:text-4xl font-bold ${colors.title}`}>
+            {title}
+          </h2>
+        </div>
+
+        {/* Testimonials Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {displayTestimonials.map((testimonial, index) => (
-            <div 
+            <article
               key={index}
-              className={`bg-gradient-to-br ${colors.gradient} rounded-2xl shadow-lg p-6 md:p-8 hover:shadow-xl transition-shadow duration-300 flex flex-col`}
+              className={`relative bg-gradient-to-br ${colors.gradient} rounded-3xl shadow-soft hover:shadow-soft-lg transition-all duration-300 p-6 md:p-8 flex flex-col border ${colors.border}`}
             >
               {/* Testimonial Image (if provided) */}
               {testimonial.image && (
-                <div className="mb-4 -mx-6 -mt-6 md:-mx-8 md:-mt-8 overflow-hidden rounded-t-2xl">
+                <div className="mb-4 -mx-6 -mt-6 md:-mx-8 md:-mt-8 overflow-hidden rounded-t-3xl">
                   <img
                     src={testimonial.image}
                     alt={`המלצה מ${testimonial.name}`}
@@ -90,40 +100,36 @@ export default function Testimonials({
               )}
 
               {/* Quote Icon */}
-              <div className="mb-4">
-                {/* <svg 
-                  className={`w-8 h-8 md:w-10 md:h-10 ${colors.accent} opacity-50`}
-                  fill="currentColor" 
-                  viewBox="0 0 24 24"
-                >
+              <div className={`w-10 h-10 ${colors.icon} rounded-xl flex items-center justify-center mb-4`}>
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                </svg> */}
+                </svg>
               </div>
 
               {/* Testimonial Text */}
-              <p className="text-gray-700 leading-relaxed mb-6 text-sm md:text-base italic flex-grow">
+              <p className="text-forest-700 leading-relaxed mb-6 text-base md:text-lg flex-grow">
                 "{testimonial.text}"
               </p>
 
               {/* Author Info */}
-              <div className="border-t border-gray-200 pt-4">
-                <p className={`font-semibold ${colors.accent} text-base md:text-lg`}>
+              <div className="border-t border-sage-100/50 pt-4 mt-auto">
+                <p className={`font-bold ${colors.accent} text-lg`}>
                   {testimonial.name}
                 </p>
                 {testimonial.service && (
-                  <p className="text-gray-500 text-sm mt-1">
+                  <p className="text-forest-500 text-sm mt-1">
                     {testimonial.service}
                   </p>
                 )}
               </div>
-            </div>
+            </article>
           ))}
         </div>
 
         {/* Note about adding more testimonials */}
         {testimonials.length === 0 && (
           <div className="mt-8 text-center">
-            <p className="text-gray-500 text-sm italic">
+            <p className="text-forest-400 text-sm italic">
               * ניתן להוסיף המלצות אמיתיות מהמטופלות
             </p>
           </div>

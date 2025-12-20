@@ -1,3 +1,201 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --color-sage: 107 146 114;
+    --color-sand: 245 235 224;
+    --color-terracotta: 192 138 101;
+    --color-forest: 45 63 52;
+    --color-cream: 253 250 245;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream-50 text-forest-800;
+    font-family: var(--font-heebo), system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heebo), system-ui, sans-serif;
+    @apply font-semibold tracking-tight;
+  }
+
+  /* Beautiful selection colors */
+  ::selection {
+    @apply bg-sage-200 text-forest-900;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-cream-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-sage-300 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-sage-400;
+  }
+}
+
+@layer components {
+  /* Organic glass card effect */
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-soft;
+  }
+
+  /* Nature-inspired section backgrounds */
+  .section-organic {
+    @apply relative overflow-hidden;
+    background:
+      radial-gradient(ellipse 80% 50% at 20% 40%, rgba(175, 199, 179, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse 60% 40% at 80% 60%, rgba(232, 212, 177, 0.2) 0%, transparent 50%),
+      linear-gradient(180deg, #fdfaf5 0%, #f4f7f5 100%);
+  }
+
+  /* Leaf decoration */
+  .leaf-decoration::before {
+    content: '';
+    @apply absolute w-32 h-32 opacity-10;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%236b9272' d='M50 5C30 5 15 30 15 50c0 25 20 45 35 45s35-20 35-45C85 30 70 5 50 5zm0 80c-10 0-25-15-25-35 0-15 10-35 25-35s25 20 25 35c0 20-15 35-25 35z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation: leafSway 4s ease-in-out infinite;
+  }
+
+  /* Elegant divider */
+  .divider-organic {
+    @apply relative h-px bg-gradient-to-r from-transparent via-sage-300 to-transparent my-8;
+  }
+
+  /* Button styles */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-white
+           bg-gradient-to-r from-sage-500 to-sage-600
+           hover:from-sage-600 hover:to-sage-700
+           shadow-soft hover:shadow-soft-lg
+           transition-all duration-300 ease-out
+           transform hover:scale-[1.02] active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold
+           text-sage-700 bg-white border-2 border-sage-200
+           hover:bg-sage-50 hover:border-sage-300
+           shadow-soft hover:shadow-soft-lg
+           transition-all duration-300 ease-out;
+  }
+
+  .btn-terracotta {
+    @apply inline-flex items-center justify-center px-8 py-4 rounded-full font-semibold text-white
+           bg-gradient-to-r from-terracotta-500 to-terracotta-600
+           hover:from-terracotta-600 hover:to-terracotta-700
+           shadow-soft hover:shadow-soft-lg
+           transition-all duration-300 ease-out
+           transform hover:scale-[1.02] active:scale-[0.98];
+  }
+
+  /* Card styles */
+  .card-organic {
+    @apply bg-white rounded-3xl shadow-soft hover:shadow-soft-lg
+           transition-all duration-300 ease-out
+           border border-sage-100/50;
+  }
+
+  .card-elevated {
+    @apply bg-white rounded-4xl shadow-soft-lg
+           border border-sage-100/30;
+  }
+
+  /* Input styles */
+  .input-organic {
+    @apply w-full px-5 py-4 rounded-2xl
+           bg-white border-2 border-sage-200
+           focus:border-sage-400 focus:ring-4 focus:ring-sage-100
+           outline-none transition-all duration-200
+           text-forest-800 placeholder:text-forest-400;
+  }
+
+  /* Badge styles */
+  .badge-sage {
+    @apply inline-flex items-center px-4 py-1.5 rounded-full
+           text-sm font-medium
+           bg-sage-100 text-sage-700;
+  }
+
+  .badge-terracotta {
+    @apply inline-flex items-center px-4 py-1.5 rounded-full
+           text-sm font-medium
+           bg-terracotta-100 text-terracotta-700;
+  }
+
+  /* Animated gradient text */
+  .text-gradient {
+    @apply bg-gradient-to-r from-sage-600 via-terracotta-500 to-sage-600 bg-clip-text text-transparent;
+    background-size: 200% auto;
+    animation: shimmer 3s linear infinite;
+  }
+}
+
+@layer utilities {
+  /* Animation delays */
+  .animation-delay-100 { animation-delay: 100ms; }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
+  .animation-delay-500 { animation-delay: 500ms; }
+
+  /* Fade in animation classes */
+  .fade-in-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  /* Organic blob shapes */
+  .blob-shape {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+
+  /* Text shadow for depth */
+  .text-shadow-soft {
+    text-shadow: 0 2px 10px rgba(45, 63, 52, 0.1);
+  }
+}
+
+/* Custom keyframes */
+@keyframes shimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes leafSway {
+  0%, 100% { transform: rotate(-3deg) translateY(0); }
+  50% { transform: rotate(3deg) translateY(-5px); }
+}
+
+/* Smooth page transitions */
+@media (prefers-reduced-motion: no-preference) {
+  .page-transition {
+    animation: fadeIn 0.4s ease-out;
+  }
+}
+
+/* Focus styles for accessibility */
+@layer base {
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-sage-500;
+  }
+}
