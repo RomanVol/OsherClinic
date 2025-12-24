@@ -10,7 +10,7 @@ export default function ContactForm() {
     interest: '',
     message: ''
   });
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
 
@@ -31,12 +31,12 @@ export default function ContactForm() {
     const whatsappMessage = `
 שלום, הגיעה פנייה חדשה מהאתר:
 
-📝 שם: ${formData.name}
-📧 אימייל: ${formData.email}
-📱 טלפון: ${formData.phone}
-🎯 מעוניינ/ת ב: ${formData.interest}
+שם: ${formData.name}
+אימייל: ${formData.email}
+טלפון: ${formData.phone}
+מעוניינת ב: ${formData.interest}
 
-💬 הודעה:
+הודעה:
 ${formData.message}
     `.trim();
 
@@ -47,7 +47,7 @@ ${formData.message}
 
     // Show success message
     setSubmitMessage('הפנייה נשלחת בוואטסאפ! תודה על פנייתך.');
-    
+
     // Reset form after 2 seconds
     setTimeout(() => {
       setFormData({
@@ -63,23 +63,35 @@ ${formData.message}
   };
 
   return (
-    <section id="contact-section" className="py-12 md:py-16 bg-gradient-to-br from-primary-50 via-purple-50 to-pink-50">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <div className="text-center mb-8 md:mb-12">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary-700 mb-4">
+    <section id="contact-section" className="relative py-16 md:py-24 overflow-hidden">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-sage-light/30 via-peach/20 to-cream"></div>
+
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-0 w-64 h-64 bg-sage/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-80 h-80 bg-terracotta/10 rounded-full blur-3xl"></div>
+
+      <div className="container mx-auto px-4 max-w-4xl relative z-10">
+        <div className="text-center mb-10 md:mb-14">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-sage-dark mb-4">
             צרי קשר
           </h2>
-          <p className="text-gray-600 text-base md:text-lg">
+          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-4"></div>
+          <p className="text-gray-600 text-base md:text-lg font-sans">
             מלאי את הפרטים ונחזור אליך בהקדם
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="bg-white/90 backdrop-blur rounded-3xl shadow-xl p-6 md:p-8 lg:p-10">
-          <div className="space-y-6">
+        <form onSubmit={handleSubmit} className="relative bg-white/70 backdrop-blur-md rounded-[2.5rem] shadow-2xl p-8 md:p-10 lg:p-12 border-2 border-gold/10 overflow-hidden">
+          {/* Decorative corner */}
+          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-sage/10 to-transparent rounded-bl-full"></div>
+          <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-terracotta/10 to-transparent rounded-tr-full"></div>
+
+          <div className="space-y-6 relative z-10">
             {/* Name Field */}
             <div>
-              <label htmlFor="name" className="block text-gray-800 font-semibold mb-2 text-base md:text-lg">
-                שם מלא <span className="text-red-500">*</span>
+              <label htmlFor="name" className="block text-sage-dark font-serif font-semibold mb-2 text-base md:text-lg">
+                שם מלא <span className="text-terracotta">*</span>
               </label>
               <input
                 type="text"
@@ -88,15 +100,15 @@ ${formData.message}
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all text-base md:text-lg"
+                className="w-full px-5 py-4 border-2 border-sage-light rounded-2xl focus:border-sage focus:ring-2 focus:ring-sage/20 outline-none transition-all text-base md:text-lg bg-white/80"
                 placeholder="הכניסי את שמך המלא"
               />
             </div>
 
             {/* Email Field */}
             <div>
-              <label htmlFor="email" className="block text-gray-800 font-semibold mb-2 text-base md:text-lg">
-                אימייל <span className="text-red-500">*</span>
+              <label htmlFor="email" className="block text-sage-dark font-serif font-semibold mb-2 text-base md:text-lg">
+                אימייל <span className="text-terracotta">*</span>
               </label>
               <input
                 type="email"
@@ -105,7 +117,7 @@ ${formData.message}
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all text-base md:text-lg"
+                className="w-full px-5 py-4 border-2 border-sage-light rounded-2xl focus:border-sage focus:ring-2 focus:ring-sage/20 outline-none transition-all text-base md:text-lg bg-white/80"
                 placeholder="example@email.com"
                 dir="ltr"
               />
@@ -113,8 +125,8 @@ ${formData.message}
 
             {/* Phone Field */}
             <div>
-              <label htmlFor="phone" className="block text-gray-800 font-semibold mb-2 text-base md:text-lg">
-                מספר טלפון <span className="text-red-500">*</span>
+              <label htmlFor="phone" className="block text-sage-dark font-serif font-semibold mb-2 text-base md:text-lg">
+                מספר טלפון <span className="text-terracotta">*</span>
               </label>
               <input
                 type="tel"
@@ -123,7 +135,7 @@ ${formData.message}
                 value={formData.phone}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all text-base md:text-lg"
+                className="w-full px-5 py-4 border-2 border-sage-light rounded-2xl focus:border-sage focus:ring-2 focus:ring-sage/20 outline-none transition-all text-base md:text-lg bg-white/80"
                 placeholder="050-1234567"
                 dir="ltr"
               />
@@ -131,8 +143,8 @@ ${formData.message}
 
             {/* Interest Selection */}
             <div>
-              <label htmlFor="interest" className="block text-gray-800 font-semibold mb-2 text-base md:text-lg">
-                במה את מעוניינת? <span className="text-red-500">*</span>
+              <label htmlFor="interest" className="block text-sage-dark font-serif font-semibold mb-2 text-base md:text-lg">
+                במה את מעוניינת? <span className="text-terracotta">*</span>
               </label>
               <select
                 id="interest"
@@ -140,7 +152,7 @@ ${formData.message}
                 value={formData.interest}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all text-base md:text-lg bg-white"
+                className="w-full px-5 py-4 border-2 border-sage-light rounded-2xl focus:border-sage focus:ring-2 focus:ring-sage/20 outline-none transition-all text-base md:text-lg bg-white/80 cursor-pointer"
               >
                 <option value="">בחרי אפשרות</option>
                 <option value="טיפול מגע עם שמנים אתריים">טיפול מגע עם שמנים אתריים</option>
@@ -153,7 +165,7 @@ ${formData.message}
 
             {/* Message Field */}
             <div>
-              <label htmlFor="message" className="block text-gray-800 font-semibold mb-2 text-base md:text-lg">
+              <label htmlFor="message" className="block text-sage-dark font-serif font-semibold mb-2 text-base md:text-lg">
                 הודעה
               </label>
               <textarea
@@ -162,7 +174,7 @@ ${formData.message}
                 value={formData.message}
                 onChange={handleChange}
                 rows={5}
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all resize-none text-base md:text-lg"
+                className="w-full px-5 py-4 border-2 border-sage-light rounded-2xl focus:border-sage focus:ring-2 focus:ring-sage/20 outline-none transition-all resize-none text-base md:text-lg bg-white/80"
                 placeholder="כתבי כאן את הודעתך (אופציונלי)"
               />
             </div>
@@ -172,16 +184,16 @@ ${formData.message}
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-primary-500 to-pink-500 hover:from-primary-600 hover:to-pink-600 text-white font-bold text-lg md:text-xl px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                className="w-full bg-gradient-to-r from-sage to-sage-dark hover:from-sage-dark hover:to-sage text-white font-bold text-lg md:text-xl px-8 py-5 rounded-full shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02] hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               >
-                {isSubmitting ? 'שולח...' : 'שלחי הודעה 📨'}
+                {isSubmitting ? 'שולח...' : 'שלחי הודעה'}
               </button>
             </div>
 
             {/* Success Message */}
             {submitMessage && (
-              <div className="text-center p-4 bg-green-100 border-2 border-green-500 rounded-xl">
-                <p className="text-green-700 font-semibold text-base md:text-lg">
+              <div className="text-center p-5 bg-sage-light/50 border-2 border-sage/30 rounded-2xl">
+                <p className="text-sage-dark font-semibold text-base md:text-lg">
                   {submitMessage}
                 </p>
               </div>

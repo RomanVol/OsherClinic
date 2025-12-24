@@ -4,7 +4,6 @@ import type { Metadata } from 'next';
 import Testimonials from '../components/Testimonials';
 import ContactForm from '../components/ContactForm';
 import ContactSection from '../components/ContactSection';
-import { massageTestimonials } from '../data/testimonials';
 import { homeTestimonials } from '../data/testimonials';
 
 export const metadata: Metadata = {
@@ -18,195 +17,252 @@ export const metadata: Metadata = {
 
 export default function MassagePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-pink-100">
-      {/* Header */}
-      <header className="bg-white/80 backdrop-blur-sm shadow-md sticky top-0 z-10">
-        <div className="container mx-auto px-4 py-4 md:py-6">
-          <Link href="/" className="inline-block mb-2 text-primary-600 hover:text-primary-700 text-sm md:text-base">
-            ← חזרה לדף הבית
+    <div className="min-h-screen relative overflow-hidden">
+      {/* Organic Background Shapes - matching main page */}
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-peach rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-float"></div>
+        <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-sage-light rounded-full mix-blend-multiply filter blur-3xl opacity-50 animation-delay-200" style={{ animation: 'float 8s ease-in-out infinite' }}></div>
+        <div className="absolute bottom-0 right-1/4 w-[450px] h-[450px] bg-terracotta-light rounded-full mix-blend-multiply filter blur-3xl opacity-30 animation-delay-400" style={{ animation: 'float 10s ease-in-out infinite' }}></div>
+
+        {/* Decorative flowing lines */}
+        <svg className="absolute top-0 left-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 0,100 Q 200,50 400,100 T 800,100 T 1200,100 T 1600,100" stroke="currentColor" strokeWidth="2" fill="none" className="text-sage-dark" />
+          <path d="M 0,300 Q 250,250 500,300 T 1000,300 T 1500,300" stroke="currentColor" strokeWidth="2" fill="none" className="text-terracotta" />
+          <path d="M 0,500 Q 300,450 600,500 T 1200,500" stroke="currentColor" strokeWidth="2" fill="none" className="text-gold" />
+        </svg>
+      </div>
+
+      {/* Header - matching main page style */}
+      <header className="bg-cream/95 backdrop-blur-md border-b-2 border-gold/20 sticky top-0 z-10 animate-fade-in-up">
+        <div className="container mx-auto px-4 py-6 md:py-8">
+          <Link href="/" className="inline-flex items-center gap-2 mb-4 text-sage-dark hover:text-terracotta transition-colors font-semibold group">
+            <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l4 5m0 0l-4 5m4-5H6" />
+            </svg>
+            חזרה לדף הבית
           </Link>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-primary-700">
-            טיפול מגע עם שמנים אתריים
-          </h1>
-          <p className="text-center text-pink-600 font-semibold text-base md:text-lg mt-2">
-            נשים בלבד ✨
-          </p>
+          <div className="flex flex-col items-center gap-2">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-center text-sage-dark tracking-wide">
+              טיפול מגע עם שמנים אתריים
+            </h1>
+            <div className="flex items-center gap-3">
+              <div className="w-12 h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent"></div>
+              <p className="text-center text-terracotta font-semibold text-lg md:text-xl font-serif italic">
+                נשים בלבד
+              </p>
+              <div className="w-12 h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent"></div>
+            </div>
+          </div>
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-8 md:py-12 max-w-4xl">
-        <article className="bg-white/90 backdrop-blur rounded-3xl shadow-2xl p-6 md:p-8 lg:p-12">
+      <main className="container mx-auto px-4 py-12 md:py-16 lg:py-20">
+        {/* Hero Section */}
+        <section className="relative bg-white/60 backdrop-blur-md rounded-[3rem] shadow-2xl p-8 md:p-12 lg:p-16 max-w-5xl mx-auto animate-fade-in-up border-2 border-terracotta/10 overflow-hidden mb-12 md:mb-16">
+          {/* Decorative corner element */}
+          <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-terracotta/20 to-transparent rounded-bl-full"></div>
+          <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-peach/30 to-transparent rounded-tr-full"></div>
+
           {/* Hero Icon */}
-          <div className="flex justify-center mb-6 md:mb-8">
-            <div className="w-24 h-24 md:w-32 md:h-32 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full flex items-center justify-center">
+          <div className="flex justify-center mb-8 md:mb-10 relative z-10">
+            <div className="w-24 h-24 md:w-32 md:h-32 bg-gradient-to-br from-terracotta to-terracotta-dark rounded-3xl flex items-center justify-center shadow-xl">
               <svg className="w-12 h-12 md:w-16 md:h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
           </div>
 
           {/* Content */}
-          <div className="space-y-4 md:space-y-6 text-gray-700 leading-relaxed text-base md:text-lg">
+          <div className="space-y-8 md:space-y-10 text-gray-700 leading-relaxed text-base md:text-lg relative z-10">
             <section>
-              <h2 className="text-xl md:text-2xl font-bold text-primary-700 mb-3 md:mb-4">מהו הטיפול?</h2>
-              <p>
+              <h2 className="text-2xl md:text-3xl font-serif font-bold text-sage-dark mb-4 md:mb-5">מהו הטיפול?</h2>
+              <p className="first-letter:text-4xl first-letter:font-serif first-letter:font-bold first-letter:text-terracotta first-letter:float-right first-letter:ml-2 first-letter:leading-none">
                 טיפול מגע עם שמנים אתריים הוא חוויה ייחודית המשלבת את כוח המגע הטיפולי עם התכונות הריפוייות של שמנים אתריים טבעיים.
                 הטיפול מותאם אישית לכל מטופלת, תוך התחשבות במצבה הפיזי והרגשי.
               </p>
             </section>
 
             <section>
-              <h2 className="text-xl md:text-2xl font-bold text-primary-700 mb-3 md:mb-4">היתרונות</h2>
-              <ul className="list-disc list-inside space-y-2 mr-4">
-                <li>הרפיה עמוקה של השרירים והמערכת העצבית</li>
-                <li>שיפור זרימת הדם והלימפה בגוף</li>
-                <li>הפגת מתחים רגשיים ופיזיים</li>
-                <li>חיזוק המערכת החיסונית</li>
-                <li>שיפור איכות השינה והרגשת חיוניות</li>
-                <li>איזון אנרגטי ורגשי</li>
-              </ul>
+              <h2 className="text-2xl md:text-3xl font-serif font-bold text-sage-dark mb-4 md:mb-5">היתרונות</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {[
+                  'הרפיה עמוקה של השרירים והמערכת העצבית',
+                  'שיפור זרימת הדם והלימפה בגוף',
+                  'הפגת מתחים רגשיים ופיזיים',
+                  'חיזוק המערכת החיסונית',
+                  'שיפור איכות השינה והרגשת חיוניות',
+                  'איזון אנרגטי ורגשי'
+                ].map((benefit, index) => (
+                  <div key={index} className="flex items-start gap-3 bg-peach/30 p-4 rounded-2xl border border-gold/10">
+                    <div className="w-6 h-6 bg-terracotta/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <svg className="w-4 h-4 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span>{benefit}</span>
+                  </div>
+                ))}
+              </div>
             </section>
 
             <section>
-              <h2 className="text-xl md:text-2xl font-bold text-primary-700 mb-3 md:mb-4">איך נראה הטיפול בפועל?</h2>
-              <ol className="list-decimal list-inside space-y-2 mr-4">
-                <li>שיחה קצרה והבנת הצורך שלך (מתח, עייפות, כאבים, עומס רגשי).</li>
-                <li>בחירת שמנים אתריים מותאמת אישית למצבך ולמטרה של המפגש.</li>
-                <li>טיפול מגע רגוע ומקצועי בסביבה שקטה ובטוחה.</li>
-                <li>הקשבה לגוף והתאמת לחץ וקצב תוך כדי הטיפול.</li>
-                <li>סיום הדרגתי, שתייה והמלצות להמשך (במידת הצורך).</li>
-              </ol>
+              <h2 className="text-2xl md:text-3xl font-serif font-bold text-sage-dark mb-4 md:mb-5">איך נראה הטיפול בפועל?</h2>
+              <div className="space-y-4">
+                {[
+                  { step: '01', text: 'שיחה קצרה והבנת הצורך שלך (מתח, עייפות, כאבים, עומס רגשי).' },
+                  { step: '02', text: 'בחירת שמנים אתריים מותאמת אישית למצבך ולמטרה של המפגש.' },
+                  { step: '03', text: 'טיפול מגע רגוע ומקצועי בסביבה שקטה ובטוחה.' },
+                  { step: '04', text: 'הקשבה לגוף והתאמת לחץ וקצב תוך כדי הטיפול.' },
+                  { step: '05', text: 'סיום הדרגתי, שתייה והמלצות להמשך (במידת הצורך).' }
+                ].map((item, index) => (
+                  <div key={index} className="flex items-start gap-4 group">
+                    <div className="w-12 h-12 bg-gradient-to-br from-terracotta to-terracotta-dark rounded-2xl flex items-center justify-center flex-shrink-0 text-white font-serif font-bold text-lg shadow-md group-hover:scale-110 transition-transform">
+                      {item.step}
+                    </div>
+                    <p className="pt-3">{item.text}</p>
+                  </div>
+                ))}
+              </div>
             </section>
 
-<section>
-  <h2 className="text-xl md:text-2xl font-bold text-primary-700 mb-3 md:mb-4">השמנים האתריים</h2>
-  <p>
-    אני עובדת עם מגוון שמנים אתריים איכותיים ביותר, כל אחד עם תכונות ייחודיות משלו.
-    השמנים נבחרים במיוחד עבורך בהתאם למצבך ולצרכים שלך - מלבנדר להרגעה, בלאנס לאיזון רגשי,
-    תפוז להעלאת אנרגיה ולבונה להפגת חרדות ומתחים ועוד רבים נוספים.
-  </p>
-  <div className="mt-4 bg-gradient-to-r from-primary-50 to-pink-50 p-4 md:p-6 rounded-xl">
-    <h3 className="text-lg md:text-xl font-semibold text-primary-800 mb-3">שמנים אתריים של חברת דוטרה</h3>
-    <p className="mb-3">
-      בקליניקה אני משתמשת בשמנים אתריים איכותיים של חברת דוטרה (doTERRA), המובילה העולמית בתחום השמנים האתריים הטהורים והטבעיים.
-    </p>
-    <p className="mb-4">
-      ניתן לרכוש את השמנים האתריים דרך הקליניקה של אושר - אשמח לייעץ לך ולהתאים את השמנים המתאימים ביותר עבורך.
-    </p>
+            <section className="bg-gradient-to-br from-sage-light/50 to-peach/30 p-6 md:p-8 rounded-[2rem] border-2 border-gold/10">
+              <h2 className="text-2xl md:text-3xl font-serif font-bold text-sage-dark mb-4 md:mb-5">השמנים האתריים</h2>
+              <p className="mb-6">
+                אני עובדת עם מגוון שמנים אתריים איכותיים ביותר, כל אחד עם תכונות ייחודיות משלו.
+                השמנים נבחרים במיוחד עבורך בהתאם למצבך ולצרכים שלך - מלבנדר להרגעה, בלאנס לאיזון רגשי,
+                תפוז להעלאת אנרגיה ולבונה להפגת חרדות ומתחים ועוד רבים נוספים.
+              </p>
+              <div className="bg-white/70 backdrop-blur-sm p-6 rounded-2xl border border-gold/20">
+                <h3 className="text-xl md:text-2xl font-serif font-semibold text-sage-dark mb-4">שמנים אתריים של חברת דוטרה</h3>
+                <p className="mb-4">
+                  בקליניקה אני משתמשת בשמנים אתריים איכותיים של חברת דוטרה (doTERRA), המובילה העולמית בתחום השמנים האתריים הטהורים והטבעיים.
+                </p>
+                <p className="mb-6">
+                  ניתן לרכוש את השמנים האתריים דרך הקליניקה של אושר - אשמח לייעץ לך ולהתאים את השמנים המתאימים ביותר עבורך.
+                </p>
 
-    {/* Updated Layout: Flex Column */}
-    <div className="flex flex-col items-start gap-4">
-      {/* 1. Text Link is now above */}
-      <a
-        href="https://www.doterra.com/IL/he_IL"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold text-base md:text-lg underline hover:no-underline transition-all"
-      >
-        למידע נוסף על שמנים אתריים של דוטרה
-        <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-        </svg>
-      </a>
+                <div className="flex flex-col items-start gap-4">
+                  <a
+                    href="https://www.doterra.com/IL/he_IL"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-sage-dark hover:text-terracotta font-semibold text-base md:text-lg underline decoration-2 underline-offset-4 hover:decoration-terracotta transition-all"
+                  >
+                    למידע נוסף על שמנים אתריים של דוטרה
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
 
-      {/* 2. Image is now below (also clickable) */}
-      <a 
-        href="https://www.doterra.com/IL/he_IL"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Image
-          src="/images/doTerraOil.jpeg"
-          alt="שמנים אתריים doTERRA בקליניקה של אושר"
-          width={250}
-          height={250}
-          className="rounded-lg hover:opacity-90 transition-opacity"
-        />
-      </a>
-    </div>
-  </div>
-</section>
+                  <a
+                    href="https://www.doterra.com/IL/he_IL"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+                  >
+                    <Image
+                      src="/images/doTerraOil.jpeg"
+                      alt="שמנים אתריים doTERRA בקליניקה של אושר"
+                      width={250}
+                      height={250}
+                      className="hover:scale-105 transition-transform duration-500"
+                    />
+                  </a>
+                </div>
+              </div>
+            </section>
 
             <section>
-              <h2 className="text-xl md:text-2xl font-bold text-primary-700 mb-3 md:mb-4">למי מתאים הטיפול?</h2>
+              <h2 className="text-2xl md:text-3xl font-serif font-bold text-sage-dark mb-4 md:mb-5">למי מתאים הטיפול?</h2>
               <p>
                 הטיפול מתאים לכל אישה המחפשת רגע של שקט, הרפיה ושיקום. במיוחד מומלץ לנשים הסובלות ממתחים,
                 כאבי שרירים, עייפות כרונית, או פשוט מחפשות חוויה של פינוק עצמי ודאגה לגוף ולנפש.
               </p>
             </section>
 
-            <section>
-              <h2 className="text-xl md:text-2xl font-bold text-primary-700 mb-3 md:mb-4">משך הטיפול</h2>
-              <p>
-                טיפול סטנדרטי נמשך כשעה עד שעה וחצי, ומתבצע במרחב שקט ומזמין שיאפשר לך להירגע ולהתחבר לעצמך.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="text-xl md:text-2xl font-bold text-primary-700 mb-3 md:mb-4">אזורי שירות</h2>
-              <p>
-                הקליניקה בחריש ומעניקה טיפול לנשים מאזור השרון הצפוני, כולל חריש, חדרה, פרדס חנה והסביבה (בתיאום מראש).
-              </p>
-            </section>
-
-            <section>
-              <h2 className="text-xl md:text-2xl font-bold text-primary-700 mb-3 md:mb-4">שאלות נפוצות</h2>
-              <div className="space-y-4">
-                <div className="bg-primary-50 p-4 md:p-5 rounded-xl">
-                  <h3 className="text-lg md:text-xl font-semibold text-primary-800 mb-2">האם הטיפול מתאים גם למי שמעולם לא עשתה טיפול מגע?</h3>
-                  <p>כן. מתחילים בעדינות, מסבירים כל שלב, ומתאימים את הטיפול לקצב ולנוחות שלך.</p>
-                </div>
-                <div className="bg-primary-50 p-4 md:p-5 rounded-xl">
-                  <h3 className="text-lg md:text-xl font-semibold text-primary-800 mb-2">איך בוחרים את השמנים האתריים?</h3>
-                  <p>הבחירה נעשית יחד איתך לפי תחושה, מטרה טיפולית ומצב רגשי/פיזי באותו יום.</p>
-                </div>
-                <div className="bg-primary-50 p-4 md:p-5 rounded-xl">
-                  <h3 className="text-lg md:text-xl font-semibold text-primary-800 mb-2">כמה זמן נמשך טיפול ומה כדאי להביא?</h3>
-                  <p>בדרך כלל שעה עד שעה וחצי. מומלץ להגיע בבגדים נוחים ולתת לעצמך זמן להירגע אחרי.</p>
-                </div>
+            <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-peach/40 p-6 rounded-2xl border border-terracotta/10">
+                <h2 className="text-xl md:text-2xl font-serif font-bold text-sage-dark mb-3">משך הטיפול</h2>
+                <p>
+                  טיפול סטנדרטי נמשך כשעה עד שעה וחצי, ומתבצע במרחב שקט ומזמין שיאפשר לך להירגע ולהתחבר לעצמך.
+                </p>
+              </div>
+              <div className="bg-sage-light/50 p-6 rounded-2xl border border-sage/10">
+                <h2 className="text-xl md:text-2xl font-serif font-bold text-sage-dark mb-3">אזורי שירות</h2>
+                <p>
+                  הקליניקה בחריש ומעניקה טיפול לנשים מאזור השרון הצפוני, כולל חריש, חדרה, פרדס חנה והסביבה.
+                </p>
               </div>
             </section>
 
             <section>
-              <h2 className="text-xl md:text-2xl font-bold text-primary-700 mb-3 md:mb-4">אולי יעניין אותך גם</h2>
-              <ul className="list-disc list-inside space-y-2 mr-4">
-                <li>
-                  <Link href="/consciousness" className="text-primary-700 hover:text-primary-800 underline hover:no-underline">
-                    טיפול תודעה בשיטת שלושת המימדים
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/lecture" className="text-primary-700 hover:text-primary-800 underline hover:no-underline">
-                    הרצאה: מצניחה לצמיחה - חיים כנגד כל הסיכויים
-                  </Link>
-                </li>
-              </ul>
+              <h2 className="text-2xl md:text-3xl font-serif font-bold text-sage-dark mb-4 md:mb-5">שאלות נפוצות</h2>
+              <div className="space-y-4">
+                {[
+                  { q: 'האם הטיפול מתאים גם למי שמעולם לא עשתה טיפול מגע?', a: 'כן. מתחילים בעדינות, מסבירים כל שלב, ומתאימים את הטיפול לקצב ולנוחות שלך.' },
+                  { q: 'איך בוחרים את השמנים האתריים?', a: 'הבחירה נעשית יחד איתך לפי תחושה, מטרה טיפולית ומצב רגשי/פיזי באותו יום.' },
+                  { q: 'כמה זמן נמשך טיפול ומה כדאי להביא?', a: 'בדרך כלל שעה עד שעה וחצי. מומלץ להגיע בבגדים נוחים ולתת לעצמך זמן להירגע אחרי.' }
+                ].map((item, index) => (
+                  <div key={index} className="bg-white/70 backdrop-blur-sm p-5 md:p-6 rounded-2xl border border-gold/10 shadow-sm">
+                    <h3 className="text-lg md:text-xl font-serif font-semibold text-sage-dark mb-2">{item.q}</h3>
+                    <p>{item.a}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl md:text-3xl font-serif font-bold text-sage-dark mb-4 md:mb-5">אולי יעניין אותך גם</h2>
+              <div className="flex flex-wrap gap-3">
+                <Link href="/consciousness" className="inline-flex items-center gap-2 bg-sage-light/60 hover:bg-sage-light px-5 py-3 rounded-full text-sage-dark font-semibold transition-all hover:shadow-md">
+                  <span>טיפול תודעה בשיטת שלושת המימדים</span>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+                  </svg>
+                </Link>
+                <Link href="/lecture" className="inline-flex items-center gap-2 bg-peach/60 hover:bg-peach px-5 py-3 rounded-full text-gold-dark font-semibold transition-all hover:shadow-md">
+                  <span>הרצאה: מצניחה לצמיחה</span>
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 19l-7-7 7-7m8 14l-7-7 7-7" />
+                  </svg>
+                </Link>
+              </div>
             </section>
 
             {/* Call to Action */}
-            <div className="pt-6 md:pt-8 text-center border-t border-gray-200">
-              <p className="text-lg md:text-xl font-semibold text-primary-700 mb-4 md:mb-6">
-                מוכנה לתאם שיחה ולקבוע טיפול?
-              </p>
-              <a
-                href="tel:0507660560"
-                className="inline-block bg-gradient-to-r from-primary-500 to-pink-500 hover:from-primary-600 hover:to-pink-600 text-white font-bold text-base md:text-lg px-8 md:px-12 py-3 md:py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                dir="ltr"
-              >
-                050-766-0560
-              </a>
-              <div className="mt-4">
-                <a href="#clinic-contact" className="text-primary-700 hover:text-primary-800 font-semibold underline hover:no-underline transition-all">
-                  או לצפייה במיקום הקליניקה
+            <div className="relative bg-gradient-to-br from-terracotta/10 via-peach/30 to-sage-light/20 backdrop-blur-lg rounded-[2rem] p-8 md:p-10 text-center border-2 border-gold/20 overflow-hidden">
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-gold/10 rounded-full blur-2xl"></div>
+              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-terracotta/10 rounded-full blur-2xl"></div>
+
+              <div className="relative z-10">
+                <p className="text-xl md:text-2xl font-serif font-bold text-sage-dark mb-6">
+                  מוכנה לתאם שיחה ולקבוע טיפול?
+                </p>
+                <a
+                  href="tel:0507660560"
+                  className="inline-block bg-gradient-to-r from-terracotta to-terracotta-dark hover:from-terracotta-dark hover:to-terracotta text-white font-bold text-lg md:text-xl px-10 md:px-14 py-4 md:py-5 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-1"
+                  dir="ltr"
+                >
+                  <span className="flex items-center gap-3">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    050-766-0560
+                  </span>
                 </a>
+                <div className="mt-4">
+                  <a href="#clinic-contact" className="text-sage-dark hover:text-terracotta font-semibold underline decoration-2 underline-offset-4 hover:decoration-terracotta transition-all">
+                    או לצפייה במיקום הקליניקה
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-        </article>
+        </section>
 
         {/* Testimonials Section */}
-<Testimonials testimonials={homeTestimonials} />
+        <Testimonials testimonials={homeTestimonials} />
       </main>
 
       {/* Contact Form */}
@@ -215,11 +271,26 @@ export default function MassagePage() {
       {/* Contact Section */}
       <ContactSection />
 
-      {/* Footer */}
-      <footer className="bg-white/80 backdrop-blur-sm mt-12 md:mt-20 py-6 md:py-8">
-        <div className="container mx-auto px-4 text-center text-gray-600">
-          <p className="text-base md:text-lg">הקליניקה של אושר © 2025</p>
-          <p className="mt-2 text-sm md:text-base">כל הזכויות שמורות</p>
+      {/* Footer - matching main page */}
+      <footer className="relative bg-sage-dark/95 backdrop-blur-md mt-16 md:mt-24 py-10 md:py-12 border-t-4 border-gold/30">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold to-transparent"></div>
+
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <h3 className="text-2xl md:text-3xl font-serif font-bold text-cream mb-3">
+              הקליניקה של אושר
+            </h3>
+            <div className="w-16 h-[2px] bg-gold/50 mx-auto mb-6"></div>
+
+            <div className="text-sage-light/80 space-y-2">
+              <p className="text-base md:text-lg font-semibold">מרכז לטיפולים הוליסטיים ופיתוח אישי</p>
+              <p className="text-sm md:text-base">נשים בלבד • חריש, השרון הצפוני</p>
+            </div>
+
+            <div className="mt-8 pt-6 border-t border-sage/30">
+              <p className="text-sage-light/60 text-sm">© 2025 הקליניקה של אושר • כל הזכויות שמורות</p>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
