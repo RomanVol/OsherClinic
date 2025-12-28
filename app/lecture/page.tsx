@@ -4,7 +4,7 @@ import ContactForm from '../components/ContactForm';
 import LectureContactSection from '../components/LectureContactSection';
 
 export const metadata: Metadata = {
-  title: 'הרצאה: מצניחה לצמיחה - חיים כנגד כל הסיכויים | הקליניקה של אושר',
+  title: 'הרצאה: מצניחה לצמיחה - חיים כנגד כל הסיכויים | אושר של קליניקה',
   description:
     'הרצאה מעוררת השראה לנשים על התגברות על אתגרים והפיכת משברים להזדמנויות לצמיחה. להזמנות ותיאום שיחה: 050-766-0560.',
   alternates: {
@@ -329,7 +329,7 @@ export default function LecturePage() {
         <div className="container mx-auto px-4">
           <div className="text-center">
             <h3 className="text-2xl md:text-3xl font-serif font-bold text-cream mb-3">
-              הקליניקה של אושר
+              אושר של קליניקה
             </h3>
             <div className="w-16 h-[2px] bg-gold/50 mx-auto mb-6"></div>
 
@@ -339,7 +339,7 @@ export default function LecturePage() {
             </div>
 
             <div className="mt-8 pt-6 border-t border-sage/30">
-              <p className="text-sage-light/60 text-sm">© 2025 הקליניקה של אושר • כל הזכויות שמורות</p>
+              <p className="text-sage-light/60 text-sm">© 2025 אושר של קליניקה • כל הזכויות שמורות</p>
             </div>
           </div>
         </div>

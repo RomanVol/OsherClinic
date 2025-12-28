@@ -1,4 +1,4 @@
-# הוספת המלצות לאתר הקליניקה של אושר
+# הוספת המלצות לאתר אושר של קליניקה
 
 ## איך להוסיף המלצות אמיתיות?
 
@@ -83,4 +83,4 @@ export const massageTestimonials: Testimonial[] = [
 
 ---
 
-נוצר עבור הקליניקה של אושר 💜
+נוצר עבור אושר של קליניקה 💜

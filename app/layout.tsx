@@ -6,7 +6,7 @@ import MusicPlayer from "./components/MusicPlayer";
 const IS_PRODUCTION = process.env.VERCEL_ENV === "production";
 
 export const metadata: Metadata = {
-  title: "הקליניקה של אושר",
+  title: "אושר של קליניקה",
   description: "מרכז לטיפולים הוליסטיים ופיתוח אישי",
   metadataBase: new URL("https://osherclinic.co.il"),
   verification: {

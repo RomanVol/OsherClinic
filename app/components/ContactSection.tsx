@@ -116,7 +116,7 @@ export default function ContactSection() {
             <div className="rounded-[2.5rem] overflow-hidden shadow-2xl border-2 border-gold/10">
               <img
                 src="/images/clinic_2.jpeg"
-                alt="הקליניקה של אושר"
+                alt="אושר של קליניקה"
                 className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>

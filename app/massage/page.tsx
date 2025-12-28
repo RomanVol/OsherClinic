@@ -7,7 +7,7 @@ import ContactSection from '../components/ContactSection';
 import { homeTestimonials } from '../data/testimonials';
 
 export const metadata: Metadata = {
-  title: 'טיפול מגע עם שמנים אתריים לנשים | הקליניקה של אושר',
+  title: 'טיפול מגע עם שמנים אתריים לנשים | אושר של קליניקה',
   description:
     'טיפול מגע מקצועי עם שמנים אתריים לנשים בלבד: הרפיה, איזון גוף-נפש והפגת מתחים. לתיאום שיחה בקלות: 050-766-0560 (אזור השרון הצפוני).',
   alternates: {
@@ -139,7 +139,7 @@ export default function MassagePage() {
                   בקליניקה אני משתמשת בשמנים אתריים איכותיים של חברת דוטרה (doTERRA), המובילה העולמית בתחום השמנים האתריים הטהורים והטבעיים.
                 </p>
                 <p className="mb-6">
-                  ניתן לרכוש את השמנים האתריים דרך הקליניקה של אושר - אשמח לייעץ לך ולהתאים את השמנים המתאימים ביותר עבורך.
+                  ניתן לרכוש את השמנים האתריים דרך אושר של קליניקה - אשמח לייעץ לך ולהתאים את השמנים המתאימים ביותר עבורך.
                 </p>
 
                 <div className="flex flex-col items-start gap-4">
@@ -278,7 +278,7 @@ export default function MassagePage() {
         <div className="container mx-auto px-4">
           <div className="text-center">
             <h3 className="text-2xl md:text-3xl font-serif font-bold text-cream mb-3">
-              הקליניקה של אושר
+              אושר של קליניקה
             </h3>
             <div className="w-16 h-[2px] bg-gold/50 mx-auto mb-6"></div>
 
@@ -288,7 +288,7 @@ export default function MassagePage() {
             </div>
 
             <div className="mt-8 pt-6 border-t border-sage/30">
-              <p className="text-sage-light/60 text-sm">© 2025 הקליניקה של אושר • כל הזכויות שמורות</p>
+              <p className="text-sage-light/60 text-sm">© 2025 אושר של קליניקה • כל הזכויות שמורות</p>
             </div>
           </div>
         </div>

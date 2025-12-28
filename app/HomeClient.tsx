@@ -34,7 +34,7 @@ export default function HomeClient() {
         <div className="container mx-auto px-4 py-6 md:py-8">
           <div className="flex flex-col items-center gap-2">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-center text-sage-dark tracking-wide">
-              הקליניקה של אושר
+              אושר של קליניקה
             </h1>
             <div className="flex items-center gap-3">
               <div className="w-12 h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent"></div>
@@ -256,7 +256,7 @@ export default function HomeClient() {
         <div className="container mx-auto px-4">
           <div className="text-center">
             <h3 className="text-2xl md:text-3xl font-serif font-bold text-cream mb-3">
-              הקליניקה של אושר
+              אושר של קליניקה
             </h3>
             <div className="w-16 h-[2px] bg-gold/50 mx-auto mb-6"></div>
 
@@ -266,7 +266,7 @@ export default function HomeClient() {
             </div>
 
             <div className="mt-8 pt-6 border-t border-sage/30">
-              <p className="text-sage-light/60 text-sm">© 2025 הקליניקה של אושר • כל הזכויות שמורות</p>
+              <p className="text-sage-light/60 text-sm">© 2025 אושר של קליניקה • כל הזכויות שמורות</p>
             </div>
           </div>
         </div>

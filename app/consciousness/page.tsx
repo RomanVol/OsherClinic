@@ -4,7 +4,7 @@ import ContactForm from '../components/ContactForm';
 import ContactSection from '../components/ContactSection';
 
 export const metadata: Metadata = {
-  title: 'טיפול תודעה בשיטת שלושת המימדים לנשים | הקליניקה של אושר',
+  title: 'טיפול תודעה בשיטת שלושת המימדים לנשים | אושר של קליניקה',
   description:
     'טיפול תודעה בשיטת שלושת המימדים לנשים בלבד: תהליך עומק לשינוי דפוסים, בהירות וצמיחה אישית. לתיאום שיחה: 050-766-0560 (אזור השרון הצפוני).',
   alternates: {
@@ -295,7 +295,7 @@ export default function ConsciousnessPage() {
         <div className="container mx-auto px-4">
           <div className="text-center">
             <h3 className="text-2xl md:text-3xl font-serif font-bold text-cream mb-3">
-              הקליניקה של אושר
+              אושר של קליניקה
             </h3>
             <div className="w-16 h-[2px] bg-gold/50 mx-auto mb-6"></div>
 
@@ -305,7 +305,7 @@ export default function ConsciousnessPage() {
             </div>
 
             <div className="mt-8 pt-6 border-t border-sage/30">
-              <p className="text-sage-light/60 text-sm">© 2025 הקליניקה של אושר • כל הזכויות שמורות</p>
+              <p className="text-sage-light/60 text-sm">© 2025 אושר של קליניקה • כל הזכויות שמורות</p>
             </div>
           </div>
         </div>
