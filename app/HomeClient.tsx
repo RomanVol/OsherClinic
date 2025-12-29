@@ -173,10 +173,10 @@ export default function HomeClient() {
 
             <div className="space-y-5 md:space-y-6 text-gray-700 leading-relaxed text-base md:text-lg max-w-3xl mx-auto">
               <p className="first-letter:text-5xl first-letter:font-serif first-letter:font-bold first-letter:text-terracotta first-letter:float-right first-letter:ml-2 first-letter:leading-none">
-                ברוכות הבאות לקליניקה של אושר - מרכז לטיפולים הוליסטיים ופיתוח אישי המיועד במיוחד לנשים.
+                ברוכות הבאות לאושר של קליניקה - מרכז לטיפולים הוליסטיים ופיתוח אישי המיועד במיוחד לנשים.
               </p>
               <p>
-                אני אושר, מטפלת מוסמכת עם ניסיון רב בתחום הטיפול ההוליסטי, המאמינה בכוח הריפוי הטבעי של הגוף והנפש.
+                שמי אושר, מטפלת מוסמכת עם ניסיון רב בתחום הטיפול ההוליסטי, המאמינה בכוח הריפוי הטבעי של הגוף והנפש.
                 המטרה שלי היא ללוות אותך במסע האישי שלך לבריאות, איזון ואושר אמיתי.
               </p>
               <p>
